@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap ~/.Xmodmap
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+#compton &
+idesk &
+setxkbmap -model abnt2 -layout br
+
+#MAX_RES="$(xrandr | sed -En 's|\s*([[0-9]{3,4}x[0-9]{3,4}).*|\1|p' | sort -n -tx -k1 -r | uniq | head -n1)"
+#xrandr --output DVI-0 --off; xrandr --output VGA-0 --mode "$MAX_RES"
+xrandr --output DVI-0 --off
+xrandr --output VGA-0 --auto
+
+#
+# Debian-local change:
+#   - fbautostart has been added with a quick hack to check to see if it
+#     exists. If it does, we'll start it up by default.
+which fbautostart > /dev/null
+if [ $? -eq 0 ]; then
+    fbautostart
+fi
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log ~/.fluxbox/log

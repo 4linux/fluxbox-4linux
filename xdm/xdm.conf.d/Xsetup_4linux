@@ -1,0 +1,30 @@
+# define resolução
+/usr/bin/xrandr --output DVI-0 --off
+/usr/bin/xrandr --output VGA-0 --mode 1360x768
+
+
+#define configurações para imagem de fundo
+
+BG_COLOR=#000000
+LOGO_WIDTH=400
+LOGO_HEIGHT=156
+POSX=460
+POSY=300
+
+#apresenta imagem de fundo
+/usr/bin/feh -B $BG_COLOR  -g ${LOGO_WIDTH}x${LOGO_HEIGHT}+$POSX+$POSY -. -Z /etc/X11/xdm/backgrounds/background.png &
+
+
+#Botões Desligar/Reiniciar
+(
+	xmessage -buttons Desligar:20,Reiniciar:21 "" ;
+	case $? in
+		20)
+ 			exec /sbin/poweroff;;
+		21)
+ 			exec /sbin/reboot;;
+ 		*)
+ 			echo "Xmessage closed on `date`";;
+	esac
+)&9
+

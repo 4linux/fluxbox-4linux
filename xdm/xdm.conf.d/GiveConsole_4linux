@@ -1,0 +1,8 @@
+#remove os processos iniciados exclusivamente para o xdm
+
+killall root-tail
+pkill xmessage
+pkill feh
+
+#da persmissões para usuário recém logado:
+chown $USER /dev/console
