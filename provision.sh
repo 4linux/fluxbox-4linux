@@ -3,7 +3,6 @@
 read -p 'Digite a senha do root: ' -s -r PASSWD
 
 SCRIPT='apt-get update
-apt-get dist-upgrade -y
 apt-get install -y passwd wget vim xdm fluxbox git xinit firefox-esr thunar geany geany-plugin-treebrowser unzip vagrant sakura idesk wicd
 echo deb https://download.virtualbox.org/virtualbox/debian buster contrib > /etc/apt/sources.list.d/virtualbox.list
 wget -O - https://www.virtualbox.org/download/oracle_vbox_2016.asc | apt-key add -

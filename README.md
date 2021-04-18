@@ -34,7 +34,7 @@ Utiliza um estilo conhecido como **equilux** levemente modificado. Todas as conf
       - theme.cfg - configurações do tema como cores e fontes
   - keys - arquivo com os atalhos do teclado
   - menu - arquivo do menu principal da área de trabalho
-  - startup - programas iniciados juntos com o fluxbox, ex: idesk
+  - startup - programas iniciados juntos com o fluxbox, ex: idesk, wicd-client
 
 ### Menu
 
