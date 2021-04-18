@@ -15,6 +15,7 @@ xmodmap ~/.Xmodmap
 # wmsmixer -w &
 #compton &
 idesk &
+wicd-client --tray &
 setxkbmap -model abnt2 -layout br
 
 #MAX_RES="$(xrandr | sed -En 's|\s*([[0-9]{3,4}x[0-9]{3,4}).*|\1|p' | sort -n -tx -k1 -r | uniq | head -n1)"
